@@ -32,9 +32,14 @@ class MyRegression extends BaseRegression {
 
 ### `maybeToPrecision(value, digits)`
 
-This package also exports a convenience method to transform numbers to readable strings.<br />
+Convenience method to transform numbers to readable strings.<br />
 If digits is not specified, "value.toString()" is used. Otherwise "value.toPrecision(digits)" is used.<br />
 This method can be used to implement `toString()` or `toLaTeX()`.
+
+### `checkArrayLength(x, y)`
+
+Convenience method to check if the input and output arrays passed to a regression
+constructor are effectively arrays with the same length.
 
 ## License
 
