@@ -30,6 +30,12 @@ class MyRegression extends BaseRegression {
 }
 ```
 
+### `maybeToPrecision(value, digits)`
+
+This package also exports a convenience method to transform numbers to readable strings.<br />
+If digits is not specified, "value.toString()" is used. Otherwise "value.toPrecision(digits)" is used.<br />
+This method can be used to implement `toString()` or `toLaTeX()`.
+
 ## License
 
   [MIT](./LICENSE)

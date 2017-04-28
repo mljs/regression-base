@@ -1,3 +1,5 @@
+export {default as maybeToPrecision} from './maybeToPrecision';
+
 export default class BaseRegression {
     constructor() {
         if (new.target === BaseRegression) {
