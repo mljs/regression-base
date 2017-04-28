@@ -1,4 +1,4 @@
-# ml-regression-base
+# regression-base
 
   [![NPM version][npm-image]][npm-url]
   [![build status][travis-image]][travis-url]
@@ -42,7 +42,7 @@ This method can be used to implement `toString()` or `toLaTeX()`.
 
 [npm-image]: https://img.shields.io/npm/v/ml-regression-base.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/ml-regression-base
-[travis-image]: https://img.shields.io/travis/mljs/ml-regression-base/master.svg?style=flat-square
-[travis-url]: https://travis-ci.org/mljs/ml-regression-base
+[travis-image]: https://img.shields.io/travis/mljs/regression-base/master.svg?style=flat-square
+[travis-url]: https://travis-ci.org/mljs/regression-base
 [download-image]: https://img.shields.io/npm/dm/ml-regression-base.svg?style=flat-square
 [download-url]: https://npmjs.org/package/ml-regression-base

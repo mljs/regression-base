@@ -17,15 +17,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mljs/ml-regression-base.git"
+    "url": "git+https://github.com/mljs/regression-base.git"
   },
   "keywords": [],
   "author": "Michaël Zasso",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mljs/ml-regression-base/issues"
+    "url": "https://github.com/mljs/regression-base/issues"
   },
-  "homepage": "https://github.com/mljs/ml-regression-base#readme",
+  "homepage": "https://github.com/mljs/regression-base#readme",
   "jest": {
     "testEnvironment": "node"
   },
