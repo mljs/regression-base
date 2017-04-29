@@ -25,7 +25,7 @@ class MyRegression extends BaseRegression {
         return x * this.factor;
     }
     toString() {
-        return 'f(x) = x * 2';
+        return `f(x) = x * ${factor}`;
     }
 }
 ```
