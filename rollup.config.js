@@ -1,3 +1,4 @@
+import babel from 'rollup-plugin-babel';
 
 export default {
   input: 'src/index.js',
@@ -6,5 +7,10 @@ export default {
     format: 'cjs',
     exports: 'named'
   },
+  plugins: [
+    babel({
+      exclude: 'node_modules/**'
+    })
+  ]
 };
 
