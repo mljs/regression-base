@@ -1,16 +1,16 @@
 export default function maybeToPrecision(value, digits) {
-    if (value < 0) {
-        value = 0 - value;
-        if (typeof digits === 'number') {
-            return '- ' + value.toPrecision(digits);
-        } else {
-            return '- ' + value.toString();
-        }
+  if (value < 0) {
+    value = 0 - value;
+    if (typeof digits === 'number') {
+      return `- ${value.toPrecision(digits)}`;
     } else {
-        if (typeof digits === 'number') {
-            return value.toPrecision(digits);
-        } else {
-            return value.toString();
-        }
+      return `- ${value.toString()}`;
     }
+  } else {
+    if (typeof digits === 'number') {
+      return value.toPrecision(digits);
+    } else {
+      return value.toString();
+    }
+  }
 }
