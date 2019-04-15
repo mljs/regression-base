@@ -55,11 +55,13 @@ describe('base regression', () => {
       chi2: 0,
       rmsd: 0
     });
+    expect(basic.score([1, 2], [2, 4.1]).rmsd).toBe(0.0707106781186545);
+
     expect(basic.score([1, 2], [0.5, 2])).toStrictEqual({
       r: 1,
       r2: 1,
       chi2: 6.5,
-      rmsd: 8
+      rmsd: 1.7677669529663689
     });
   });
 });

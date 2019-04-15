@@ -71,7 +71,7 @@ export default class BaseRegression {
       if (y[i] !== 0) {
         chi2 += ((y[i] - y2[i]) * (y[i] - y2[i])) / y[i];
       }
-      rmsd = (y[i] - y2[i]) * (y[i] - y2[i]);
+      rmsd += (y[i] - y2[i]) * (y[i] - y2[i]);
     }
 
     const r =
@@ -82,7 +82,7 @@ export default class BaseRegression {
       r: r,
       r2: r * r,
       chi2: chi2,
-      rmsd: (rmsd * rmsd) / n
+      rmsd: Math.sqrt(rmsd / n)
     };
   }
 }
