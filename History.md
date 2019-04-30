@@ -1,3 +1,17 @@
+# [2.0.0](https://github.com/mljs/regression-base/compare/v1.2.1...v2.0.0) (2019-04-30)
+
+
+### chore
+
+* remove support for Node.js 6 ([d7031cd](https://github.com/mljs/regression-base/commit/d7031cd))
+
+
+### BREAKING CHANGES
+
+* Support for Node.js 6 was removed.
+
+
+
 ## [1.2.1](https://github.com/mljs/regression-base/compare/v1.2.0...v1.2.1) (2019-04-15)
 
 
