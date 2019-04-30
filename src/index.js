@@ -12,9 +12,9 @@ export default class BaseRegression {
     if (typeof x === 'number') {
       return this._predict(x);
     } else if (Array.isArray(x)) {
-      const y = new Array(x.length);
+      const y = [];
       for (let i = 0; i < x.length; i++) {
-        y[i] = this._predict(x[i]);
+        y.push(this._predict(x[i]));
       }
       return y;
     } else {

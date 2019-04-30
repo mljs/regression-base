@@ -4,14 +4,17 @@
   "description": "Base class for regression modules",
   "main": "lib/index.js",
   "module": "src/index.js",
+  "types": "regression-base.d.ts",
+  "sideEffects": false,
   "files": [
     "lib",
     "src"
   ],
   "scripts": {
+    "compile": "rollup -c",
     "eslint": "eslint src",
     "eslint-fix": "npm run eslint -- --fix",
-    "prepublish": "rollup -c",
+    "prepublishOnly": "npm run compile",
     "test": "npm run test-coverage && npm run eslint",
     "test-coverage": "jest --coverage",
     "test-only": "jest"
@@ -32,13 +35,14 @@
   },
   "devDependencies": {
     "babel-jest": "^24.7.1",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "@babel/plugin-transform-modules-commonjs": "^7.4.4",
     "eslint": "^5.16.0",
     "eslint-config-cheminfo": "^1.20.1",
-    "eslint-plugin-import": "^2.17.1",
-    "eslint-plugin-jest": "^22.4.1",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jest": "^22.5.1",
     "eslint-plugin-no-only-tests": "^2.3.0",
     "jest": "^24.7.1",
-    "rollup": "^1.10.0"
-  }
+    "rollup": "^1.10.1"
+  },
+  "dependencies": {}
 }
