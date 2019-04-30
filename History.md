@@ -1,3 +1,12 @@
+## [2.0.1](https://github.com/mljs/regression-base/compare/v2.0.0...v2.0.1) (2019-04-30)
+
+
+### Bug Fixes
+
+* include TS definitions in npm package ([21ca3e0](https://github.com/mljs/regression-base/commit/21ca3e0))
+
+
+
 # [2.0.0](https://github.com/mljs/regression-base/compare/v1.2.1...v2.0.0) (2019-04-30)
 
 
