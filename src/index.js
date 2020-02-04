@@ -1,6 +1,7 @@
+import isAnyArray from 'is-any-array';
+
 export { default as maybeToPrecision } from './maybeToPrecision';
 export { default as checkArrayLength } from './checkArrayLength';
-import isAnyArray from 'is-any-array';
 export default class BaseRegression {
   constructor() {
     if (new.target === BaseRegression) {
