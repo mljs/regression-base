@@ -1,3 +1,12 @@
+# [2.1.0](https://github.com/mljs/regression-base/compare/v2.0.1...v2.1.0) (2020-02-04)
+
+
+### Features
+
+* allow types array ([28adfa8](https://github.com/mljs/regression-base/commit/28adfa86c8c7feb491565e060ee16705991e98cf))
+
+
+
 ## [2.0.1](https://github.com/mljs/regression-base/compare/v2.0.0...v2.0.1) (2019-04-30)
 
 
