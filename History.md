@@ -1,3 +1,12 @@
+## [2.1.1](https://github.com/mljs/regression-base/compare/v2.1.0...v2.1.1) (2020-02-04)
+
+
+### Bug Fixes
+
+* allows any array for predict and score ([23bfb60](https://github.com/mljs/regression-base/commit/23bfb607923985ade77aad33f76f09dc9e43e874))
+
+
+
 # [2.1.0](https://github.com/mljs/regression-base/compare/v2.0.1...v2.1.0) (2020-02-04)
 
 
