@@ -13,7 +13,7 @@ class Basic extends BaseRegression {
 
 describe('base regression', () => {
   it('should not be directly constructable', () => {
-    expect(function () {
+    expect(function() {
       // eslint-disable-next-line no-new
       new BaseRegression();
     }).toThrow(/BaseRegression must be subclassed/);
@@ -21,7 +21,7 @@ describe('base regression', () => {
 
   it('should throw if _predict is not implemented', () => {
     const reg = new NoPredict();
-    expect(function () {
+    expect(function() {
       reg.predict(0);
     }).toThrow(/_predict must be implemented/);
   });
@@ -35,7 +35,7 @@ describe('base regression', () => {
 
   it('should throw on invalid value', () => {
     const basic = new Basic(2);
-    expect(function () {
+    expect(function() {
       basic.predict();
     }).toThrow(/must be a number or array/);
   });
@@ -53,7 +53,7 @@ describe('base regression', () => {
       r: 1,
       r2: 1,
       chi2: 0,
-      rmsd: 0
+      rmsd: 0,
     });
     expect(basic.score([1, 2], [2, 4.1]).rmsd).toBe(0.0707106781186545);
 
@@ -61,7 +61,7 @@ describe('base regression', () => {
       r: 1,
       r2: 1,
       chi2: 6.5,
-      rmsd: 1.7677669529663689
+      rmsd: 1.7677669529663689,
     });
   });
 });

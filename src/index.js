@@ -82,7 +82,7 @@ export default class BaseRegression {
       r: r,
       r2: r * r,
       chi2: chi2,
-      rmsd: Math.sqrt(rmsd / n)
+      rmsd: Math.sqrt(rmsd / n),
     };
   }
 }
