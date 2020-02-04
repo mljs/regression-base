@@ -1,6 +1,6 @@
 export { default as maybeToPrecision } from './maybeToPrecision';
 export { default as checkArrayLength } from './checkArrayLength';
-
+import isAnyArray from 'is-any-array';
 export default class BaseRegression {
   constructor() {
     if (new.target === BaseRegression) {
@@ -11,7 +11,7 @@ export default class BaseRegression {
   predict(x) {
     if (typeof x === 'number') {
       return this._predict(x);
-    } else if (Array.isArray(x)) {
+    } else if (isAnyArray(x)) {
       const y = [];
       for (let i = 0; i < x.length; i++) {
         y.push(this._predict(x[i]));
@@ -45,7 +45,7 @@ export default class BaseRegression {
    * @return {object}
    */
   score(x, y) {
-    if (!Array.isArray(x) || !Array.isArray(y) || x.length !== y.length) {
+    if (!isAnyArray(x) || !isAnyArray(y) || x.length !== y.length) {
       throw new Error('x and y must be arrays of the same length');
     }
 
