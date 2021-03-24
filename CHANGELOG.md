@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.3](https://www.github.com/mljs/regression-base/compare/v2.1.2...v2.1.3) (2021-03-24)
+
+
+### Bug Fixes
+
+* allow full range of is-any-array-versions ([d49cc93](https://www.github.com/mljs/regression-base/commit/d49cc93157037928bf1c2eb1949f7726f478d04f))
+
 ### [2.1.2](https://github.com/mljs/regression-base/compare/v2.1.1...v2.1.2) (2021-03-24)
 
 ## [2.1.1](https://github.com/mljs/regression-base/compare/v2.1.0...v2.1.1) (2020-02-04)
@@ -79,6 +86,3 @@
 ### Features
 
 * implement BaseRegression ([7920fce](https://github.com/mljs/regression-base/commit/7920fce))
-
-
-
