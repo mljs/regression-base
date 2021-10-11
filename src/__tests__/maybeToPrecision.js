@@ -1,4 +1,4 @@
-import maybeToPrecision from '../maybeToPrecision';
+import maybeToPrecision from '../utils/maybeToPrecision';
 
 describe('maybeToPrecision', () => {
   it('positive number - no digit', () => {
@@ -27,7 +27,7 @@ describe('maybeToPrecision', () => {
   });
 
   it('wrong digit option', () => {
-    expect(function () {
+    expect(function test() {
       maybeToPrecision(0, 0);
     }).toThrow(/toPrecision\(\) argument must be between 1 and (?:100|21)/);
   });

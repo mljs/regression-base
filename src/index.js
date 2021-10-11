@@ -1,7 +1,10 @@
 import isAnyArray from 'is-any-array';
 
-export { default as maybeToPrecision } from './maybeToPrecision';
-export { default as checkArrayLength } from './checkArrayLength';
+import maybeToPrecision from './utils/maybeToPrecision';
+
+export { default as maybeToPrecision } from './utils/maybeToPrecision';
+export { default as checkArrayLength } from './utils/checkArrayLength';
+
 export default class BaseRegression {
   constructor() {
     if (new.target === BaseRegression) {
@@ -31,12 +34,22 @@ export default class BaseRegression {
     // Do nothing for this package
   }
 
-  toString() {
-    return '';
+  /**
+   * Display the formula
+   * @param {number} precision - precision for the numbers
+   * @return {string}
+   */
+  toString(precision) {
+    return this._toFormula({ precision, isLaTeX: false });
   }
 
-  toLaTeX() {
-    return '';
+  /**
+   * Display the formula in LaTeX format
+   * @param {number} precision - precision for the numbers
+   * @return {string}
+   */
+  toLaTeX(precision) {
+    return this._toFormula({ precision, isLaTeX: true });
   }
 
   /**
@@ -85,5 +98,46 @@ export default class BaseRegression {
       chi2: chi2,
       rmsd: Math.sqrt(rmsd / n),
     };
+  }
+
+  _toFormula(options ={}) {
+    const { precision = 1, isLaTeX = false } = options;
+    let sup = '^';
+    let closeSup = '';
+    let times = ' * ';
+    if (isLaTeX) {
+      sup = '^{';
+      closeSup = '}';
+      times = '';
+    }
+    let fn = '';
+    let str = '';
+    for (let k = 0; k < this.coefficients.length; k++) {
+      str = '';
+      if (this.coefficients[k] !== 0) {
+        if (this.powers[k] === 0) {
+          str = maybeToPrecision(this.coefficients[k], precision);
+        } else {
+          if (this.powers[k] === 1) {
+            str = `${maybeToPrecision(this.coefficients[k], precision) +
+              times}x`;
+          } else {
+            str = `${maybeToPrecision(this.coefficients[k], precision) +
+              times}x${sup}${this.powers[k]}${closeSup}`;
+          }
+        }
+
+        if (this.coefficients[k] > 0 && k !== this.coefficients.length - 1) {
+          str = ` + ${str}`;
+        } else if (k !== this.coefficients.length - 1) {
+          str = ` ${str}`;
+        }
+      }
+      fn = str + fn;
+    }
+    if (fn.charAt(0) === '+') {
+      fn = fn.slice(1);
+    }
+    return `f(x) = ${fn}`;
   }
 }

@@ -1,4 +1,4 @@
-import checkArrayLength from '../checkArrayLength';
+import checkArrayLength from '../utils/checkArrayLength';
 
 describe('checkArrayLength', () => {
   it('throws on different Length', () => {

@@ -5,22 +5,32 @@ class Basic extends BaseRegression {
   constructor(factor) {
     super();
     this.factor = factor;
+    this.coefficients = [];
+    this.powers = [];
   }
   _predict(x) {
     return x * this.factor;
+  }
+
+  loadCoefficients(coefficients) {
+    this.coefficients = coefficients;
+  }
+
+  loadPowers(powers) {
+    this.powers = powers;
   }
 }
 
 describe('base regression', () => {
   it('should not be directly constructable', () => {
-    expect(function () {
+    expect(function test () {
       new BaseRegression();
     }).toThrow(/BaseRegression must be subclassed/);
   });
 
   it('should throw if _predict is not implemented', () => {
     const reg = new NoPredict();
-    expect(function () {
+    expect(function test () {
       reg.predict(0);
     }).toThrow(/_predict must be implemented/);
   });
@@ -34,16 +44,18 @@ describe('base regression', () => {
 
   it('should throw on invalid value', () => {
     const basic = new Basic(2);
-    expect(function () {
+    expect(function test () {
       basic.predict();
     }).toThrow(/must be a number or array/);
   });
 
   it('should implement dummy predictor functions', () => {
     const basic = new Basic(2);
+    basic.loadCoefficients([1, 2]);
+    basic.loadPowers([3, 4]);
     basic.train(); // should not throw
-    expect(basic.toString()).toStrictEqual('');
-    expect(basic.toLaTeX()).toStrictEqual('');
+    expect(basic.toString(3)).toStrictEqual(`f(x) = 2.00 * x^4 + 1.00 * x^3`);
+    expect(basic.toLaTeX()).toStrictEqual(`f(x) = 2x^{4} + 1x^{3}`);
   });
 
   it('should implement a scoring function', () => {
