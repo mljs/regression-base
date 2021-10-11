@@ -1,7 +1,9 @@
+/* eslint-disable no-unused-vars */
 import isAnyArray from 'is-any-array';
 
 export { default as maybeToPrecision } from './maybeToPrecision';
 export { default as checkArrayLength } from './checkArrayLength';
+
 export default class BaseRegression {
   constructor() {
     if (new.target === BaseRegression) {
@@ -31,11 +33,11 @@ export default class BaseRegression {
     // Do nothing for this package
   }
 
-  toString() {
+  toString(options={}) {
     return '';
   }
 
-  toLaTeX() {
+  toLaTeX(options={}) {
     return '';
   }
 
