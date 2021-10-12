@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import isAnyArray from 'is-any-array';
 
 export { default as maybeToPrecision } from './maybeToPrecision';
@@ -33,11 +32,11 @@ export default class BaseRegression {
     // Do nothing for this package
   }
 
-  toString(options={}) {
+  toString() {
     return '';
   }
 
-  toLaTeX(options={}) {
+  toLaTeX() {
     return '';
   }
 

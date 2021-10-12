@@ -27,7 +27,7 @@ describe('maybeToPrecision', () => {
   });
 
   it('wrong digit option', () => {
-    expect(function test() {
+    expect(() => {
       maybeToPrecision(0, 0);
     }).toThrow(/toPrecision\(\) argument must be between 1 and (?:100|21)/);
   });

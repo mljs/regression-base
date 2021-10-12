@@ -13,14 +13,14 @@ class Basic extends BaseRegression {
 
 describe('base regression', () => {
   it('should not be directly constructable', () => {
-    expect(function test() {
+    expect(() => {
       new BaseRegression();
     }).toThrow(/BaseRegression must be subclassed/);
   });
 
   it('should throw if _predict is not implemented', () => {
     const reg = new NoPredict();
-    expect(function test() {
+    expect(() => {
       reg.predict(0);
     }).toThrow(/_predict must be implemented/);
   });
@@ -34,7 +34,7 @@ describe('base regression', () => {
 
   it('should throw on invalid value', () => {
     const basic = new Basic(2);
-    expect(function test() {
+    expect(() => {
       basic.predict();
     }).toThrow(/must be a number or array/);
   });
@@ -73,11 +73,11 @@ describe('base regression', () => {
 
   it('should throw error if inputs are not arrays or has different length', () => {
     const basic = new Basic(2);
-    expect(function test() {
+    expect(() => {
       basic.score(1, 2)
     }).toThrow("x and y must be arrays of the same length");
 
-    expect(function test() {
+    expect(() => {
       basic.score([1, 2], [2])
     }).toThrow("x and y must be arrays of the same length");
   });
