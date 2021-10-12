@@ -35,14 +35,14 @@
     "testEnvironment": "node"
   },
   "dependencies": {
-    "is-any-array": "^1.0.0"
+    "is-any-array": "^1.0.1"
   },
   "devDependencies": {
-    "@babel/plugin-transform-modules-commonjs": "^7.13.8",
+    "@babel/plugin-transform-modules-commonjs": "^7.15.4",
     "eslint": "^7.22.0",
-    "eslint-config-cheminfo": "^5.2.3",
-    "jest": "^26.6.3",
-    "prettier": "^2.2.1",
-    "rollup": "^2.42.3"
+    "eslint-config-cheminfo": "^6.0.1",
+    "jest": "^27.2.5",
+    "prettier": "^2.4.1",
+    "rollup": "^2.58.0"
   }
 }
