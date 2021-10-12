@@ -9,8 +9,8 @@ declare module 'ml-regression-base' {
   export default class BaseRegression {
     predict(x: number): number;
     predict(x: number[]): number[];
-    toString(): string;
-    toLaTeX(): string;
+    toString(precision?: number): string;
+    toLaTeX(precision?: number): string;
     score(x: number[], y: number[]): RegressionScore;
   }
 }
