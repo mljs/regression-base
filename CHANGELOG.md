@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.4](https://www.github.com/mljs/regression-base/compare/v2.1.3...v2.1.4) (2021-10-12)
+
+
+### Bug Fixes
+
+* **typings:** add precision to toString and toLaTeX methods ([#7](https://www.github.com/mljs/regression-base/issues/7)) ([8350ea7](https://www.github.com/mljs/regression-base/commit/8350ea702cd043a7b32b918e7543d179c762d7a3))
+
 ### [2.1.3](https://www.github.com/mljs/regression-base/compare/v2.1.2...v2.1.3) (2021-03-24)
 
 
