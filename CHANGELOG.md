@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.5](https://www.github.com/mljs/regression-base/compare/v2.1.4...v2.1.5) (2021-11-16)
+
+
+### Bug Fixes
+
+* add type definitions to auxiliary functions ([#9](https://www.github.com/mljs/regression-base/issues/9)) ([c041fd9](https://www.github.com/mljs/regression-base/commit/c041fd9f7a6e6ad49477c2940a4344ba87d71a21))
+
 ### [2.1.4](https://www.github.com/mljs/regression-base/compare/v2.1.3...v2.1.4) (2021-10-12)
 
 
