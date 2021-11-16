@@ -13,4 +13,8 @@ declare module 'ml-regression-base' {
     toLaTeX(precision?: number): string;
     score(x: number[], y: number[]): RegressionScore;
   }
+
+  export function maybeToPrecision(value: number, digits?: number): string;
+
+  export function checkArrayLength(x: number[], y: number[]): void;
 }
