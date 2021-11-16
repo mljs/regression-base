@@ -14,7 +14,7 @@ declare module 'ml-regression-base' {
     score(x: number[], y: number[]): RegressionScore;
   }
 
-  export function maybeToPrecision(value: number, digits: number): string;
+  export function maybeToPrecision(value: number, digits?: number): string;
 
-  export function checkArrayLength(x: number[], y: number[]);
+  export function checkArrayLength(x: number[], y: number[]): void;
 }
