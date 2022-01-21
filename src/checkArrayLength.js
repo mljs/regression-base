@@ -1,4 +1,4 @@
-import isAnyArray from 'is-any-array';
+import { isAnyArray } from 'is-any-array';
 
 export default function checkArraySize(x, y) {
   if (!isAnyArray(x) || !isAnyArray(y)) {
