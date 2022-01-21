@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.6](https://www.github.com/mljs/regression-base/compare/v2.1.5...v2.1.6) (2022-01-21)
+
+
+### Bug Fixes
+
+* update dependencies ([da93a3a](https://www.github.com/mljs/regression-base/commit/da93a3a683d5931edce5c77eb6ef420de5a6ba6d))
+
 ### [2.1.5](https://www.github.com/mljs/regression-base/compare/v2.1.4...v2.1.5) (2021-11-16)
 
 
