@@ -74,11 +74,11 @@ describe('base regression', () => {
   it('should throw error if inputs are not arrays or has different length', () => {
     const basic = new Basic(2);
     expect(() => {
-      basic.score(1, 2)
-    }).toThrow("x and y must be arrays of the same length");
+      basic.score(1, 2);
+    }).toThrow('x and y must be arrays of the same length');
 
     expect(() => {
-      basic.score([1, 2], [2])
-    }).toThrow("x and y must be arrays of the same length");
+      basic.score([1, 2], [2]);
+    }).toThrow('x and y must be arrays of the same length');
   });
 });
