@@ -1,3 +1,5 @@
+import { expect, it, describe } from '@jest/globals';
+
 import checkArrayLength from '../checkArrayLength';
 
 describe('checkArrayLength', () => {

@@ -81,9 +81,9 @@ export default class BaseRegression {
       Math.sqrt((n * xSquared - xSum * xSum) * (n * ySquared - ySum * ySum));
 
     return {
-      r: r,
+      r,
       r2: r * r,
-      chi2: chi2,
+      chi2,
       rmsd: Math.sqrt(rmsd / n),
     };
   }

@@ -1,3 +1,5 @@
+import { expect, it, describe } from '@jest/globals';
+
 import BaseRegression from '..';
 
 class NoPredict extends BaseRegression {}

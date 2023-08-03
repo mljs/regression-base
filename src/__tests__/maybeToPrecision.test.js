@@ -1,3 +1,5 @@
+import { expect, it, describe } from '@jest/globals';
+
 import maybeToPrecision from '../maybeToPrecision';
 
 describe('maybeToPrecision', () => {

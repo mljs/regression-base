@@ -6,11 +6,9 @@ export default function maybeToPrecision(value, digits) {
     } else {
       return `- ${value.toString()}`;
     }
+  } else if (typeof digits === 'number') {
+    return value.toPrecision(digits);
   } else {
-    if (typeof digits === 'number') {
-      return value.toPrecision(digits);
-    } else {
-      return value.toString();
-    }
+    return value.toString();
   }
 }
