@@ -14,6 +14,7 @@ describe('checkArrayLength', () => {
     const expected = /x and y must be arrays/;
     expect(() => checkArrayLength(null, [1])).toThrow(expected);
     expect(() => checkArrayLength([], null)).toThrow(expected);
+    // @ts-expect-error testing invalid input
     expect(() => checkArrayLength()).toThrow(expected);
     expect(() => checkArrayLength(42, [])).toThrow(expected);
     expect(() => checkArrayLength([], 'hello')).toThrow(expected);
