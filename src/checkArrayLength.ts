@@ -1,6 +1,11 @@
 import { isAnyArray } from 'is-any-array';
 
-export default function checkArraySize(x, y) {
+/**
+ * Check that x and y are arrays, and they are of the same length
+ * @param x
+ * @param y
+ */
+export default function checkArraySize(x: unknown, y: unknown): void {
   if (!isAnyArray(x) || !isAnyArray(y)) {
     throw new TypeError('x and y must be arrays');
   }
