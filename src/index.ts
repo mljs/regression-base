@@ -4,7 +4,7 @@ import checkArrayLength, { type NumberArray } from './checkArrayLength';
 
 export { default as maybeToPrecision } from './maybeToPrecision';
 
-interface RegressionScore {
+export interface RegressionScore {
   r: number;
   r2: number;
   chi2: number;
@@ -99,4 +99,4 @@ export default class BaseRegression {
   }
 }
 
-export { checkArrayLength };
+export { checkArrayLength, type NumberArray };
