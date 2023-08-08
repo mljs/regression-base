@@ -1,19 +1,5 @@
+import { NumberArray } from 'cheminfo-types';
 import { isAnyArray } from 'is-any-array';
-
-/**
- * In this context a number array is expected.
- */
-export type NumberArray =
-  | number[]
-  | Int8Array
-  | Uint8Array
-  | Uint8ClampedArray
-  | Int16Array
-  | Uint16Array
-  | Int32Array
-  | Uint32Array
-  | Float32Array
-  | Float64Array;
 /**
  * Check that x and y are arrays with the same length.
  * @param x - first array

@@ -1,6 +1,7 @@
+import { type NumberArray } from 'cheminfo-types';
 import { isAnyArray } from 'is-any-array';
 
-import checkArrayLength, { type NumberArray } from './checkArrayLength';
+import checkArrayLength from './checkArrayLength';
 
 export { default as maybeToPrecision } from './maybeToPrecision';
 
