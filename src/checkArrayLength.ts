@@ -20,7 +20,7 @@ export type NumberArray =
  * @param y - second array
  * @throws if x or y are not the same length, or if they are not arrays
  */
-export default function checkArraySize(x: NumberArray, y: NumberArray) {
+export default function checkArrayLength(x: NumberArray, y: NumberArray) {
   if (!isAnyArray(x) || !isAnyArray(y)) {
     throw new TypeError('x and y must be arrays');
   }

@@ -1,8 +1,14 @@
 import { isAnyArray } from 'is-any-array';
+import checkArrayLength, { type NumberArray } from './checkArrayLength';
 
 export { default as maybeToPrecision } from './maybeToPrecision';
-export { default as checkArrayLength } from './checkArrayLength';
 
+interface ScoreResult {
+  r: number;
+  r2: number;
+  chi2: number;
+  rmsd: number;
+}
 export default class BaseRegression {
   constructor() {
     if (new.target === BaseRegression) {
@@ -10,13 +16,15 @@ export default class BaseRegression {
     }
   }
 
-  predict(x) {
+  predict(x: number | number[]) {
     if (typeof x === 'number') {
+      // @ts-expect-error This function is implemented by the subclasses
       return this._predict(x);
     } else if (isAnyArray(x)) {
       const y = [];
-      for (let i = 0; i < x.length; i++) {
-        y.push(this._predict(x[i]));
+      for (const xVal of x) {
+        // @ts-expect-error This function is implemented by the subclasses
+        y.push(this._predict(xVal));
       }
       return y;
     } else {
@@ -42,16 +50,17 @@ export default class BaseRegression {
 
   /**
    * Return the correlation coefficient of determination (r) and chi-square.
-   * @param {Array<number>} x
-   * @param {Array<number>} y
-   * @return {object}
+   * @param x - explanatory variable
+   * @param y - response variable
+   * @return - object {@link ScoreResult}
    */
-  score(x, y) {
+  score(x: NumberArray, y: NumberArray): ScoreResult {
     checkArrayLength(x, y);
 
     const n = x.length;
     const y2 = new Array(n);
     for (let i = 0; i < n; i++) {
+      // @ts-expect-error This function is implemented by the subclasses
       y2[i] = this._predict(x[i]);
     }
 
@@ -86,3 +95,5 @@ export default class BaseRegression {
     };
   }
 }
+
+export { checkArrayLength };

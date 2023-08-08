@@ -77,10 +77,10 @@ describe('base regression', () => {
     const basic = new Basic(2);
     expect(() => {
       basic.score(1, 2);
-    }).toThrow('x and y must be arrays of the same length');
+    }).toThrow('x and y must be arrays');
 
     expect(() => {
       basic.score([1, 2], [2]);
-    }).toThrow('x and y must be arrays of the same length');
+    }).toThrow('x and y arrays must have the same length');
   });
 });
