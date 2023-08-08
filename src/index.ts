@@ -56,7 +56,7 @@ export default class BaseRegression {
    * Return the correlation coefficient of determination (r) and chi-square.
    * @param x - explanatory variable
    * @param y - response variable
-   * @return - object {@link RegressionScore}
+   * @return - Object with further statistics.
    */
   score(x: NumberArray, y: NumberArray): RegressionScore {
     checkArrayLength(x, y);
