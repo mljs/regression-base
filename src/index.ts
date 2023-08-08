@@ -1,4 +1,5 @@
 import { isAnyArray } from 'is-any-array';
+
 import checkArrayLength, { type NumberArray } from './checkArrayLength';
 
 export { default as maybeToPrecision } from './maybeToPrecision';
@@ -18,12 +19,10 @@ export default class BaseRegression {
 
   predict(x: number | number[]) {
     if (typeof x === 'number') {
-      // @ts-expect-error This function is implemented by the subclasses
       return this._predict(x);
     } else if (isAnyArray(x)) {
       const y = [];
       for (const xVal of x) {
-        // @ts-expect-error This function is implemented by the subclasses
         y.push(this._predict(xVal));
       }
       return y;
@@ -32,7 +31,8 @@ export default class BaseRegression {
     }
   }
 
-  _predict() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  _predict(x: number): number {
     throw new Error('_predict must be implemented');
   }
 
@@ -60,7 +60,6 @@ export default class BaseRegression {
     const n = x.length;
     const y2 = new Array(n);
     for (let i = 0; i < n; i++) {
-      // @ts-expect-error This function is implemented by the subclasses
       y2[i] = this._predict(x[i]);
     }
 

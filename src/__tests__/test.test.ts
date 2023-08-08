@@ -4,11 +4,12 @@ import BaseRegression from '..';
 
 class NoPredict extends BaseRegression {}
 class Basic extends BaseRegression {
-  constructor(factor) {
+  factor: number;
+  constructor(factor: number) {
     super();
     this.factor = factor;
   }
-  _predict(x) {
+  _predict(x: number) {
     return x * this.factor;
   }
 }
@@ -37,6 +38,7 @@ describe('base regression', () => {
   it('should throw on invalid value', () => {
     const basic = new Basic(2);
     expect(() => {
+      // @ts-expect-error testing invalid input
       basic.predict();
     }).toThrow(/must be a number or array/);
   });
@@ -76,6 +78,7 @@ describe('base regression', () => {
   it('should throw error if inputs are not arrays or has different length', () => {
     const basic = new Basic(2);
     expect(() => {
+      // @ts-expect-error testing invalid input
       basic.score(1, 2);
     }).toThrow('x and y must be arrays');
 
