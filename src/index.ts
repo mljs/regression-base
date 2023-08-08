@@ -18,8 +18,8 @@ export default class BaseRegression {
   }
 
   predict(x: number): number;
-  predict(x: number[]): number[];
-  predict(x: number | number[]) {
+  predict(x: NumberArray): number[];
+  predict(x: number | NumberArray) {
     if (typeof x === 'number') {
       return this._predict(x);
     } else if (isAnyArray(x)) {
