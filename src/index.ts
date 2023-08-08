@@ -4,7 +4,7 @@ import checkArrayLength, { type NumberArray } from './checkArrayLength';
 
 export { default as maybeToPrecision } from './maybeToPrecision';
 
-interface ScoreResult {
+interface RegressionScore {
   r: number;
   r2: number;
   chi2: number;
@@ -17,6 +17,8 @@ export default class BaseRegression {
     }
   }
 
+  predict(x: number): number;
+  predict(x: number[]): number[];
   predict(x: number | number[]) {
     if (typeof x === 'number') {
       return this._predict(x);
@@ -40,11 +42,11 @@ export default class BaseRegression {
     // Do nothing for this package
   }
 
-  toString() {
+  toString(precision?: number) {
     return '';
   }
 
-  toLaTeX() {
+  toLaTeX(precision?: number) {
     return '';
   }
 
@@ -52,9 +54,9 @@ export default class BaseRegression {
    * Return the correlation coefficient of determination (r) and chi-square.
    * @param x - explanatory variable
    * @param y - response variable
-   * @return - object {@link ScoreResult}
+   * @return - object {@link RegressionScore}
    */
-  score(x: NumberArray, y: NumberArray): ScoreResult {
+  score(x: NumberArray, y: NumberArray): RegressionScore {
     checkArrayLength(x, y);
 
     const n = x.length;
