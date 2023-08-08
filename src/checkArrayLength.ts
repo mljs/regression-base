@@ -1,12 +1,26 @@
 import { isAnyArray } from 'is-any-array';
 
 /**
- * Check that x and y are arrays, and they are of the same length
- * @param x - first item to check
- * @param y - second item to check
- * @throws {TypeError} if x or y are not arrays
+ * In this context a number array is expected.
  */
-export default function checkArraySize(x: unknown, y: unknown): void {
+export type NumberArray =
+  | number[]
+  | Int8Array
+  | Uint8Array
+  | Uint8ClampedArray
+  | Int16Array
+  | Uint16Array
+  | Int32Array
+  | Uint32Array
+  | Float32Array
+  | Float64Array;
+/**
+ * Check that x and y are arrays with the same length.
+ * @param x - first array
+ * @param y - second array
+ * @throws if x or y are not the same length, or if they are not arrays
+ */
+export default function checkArraySize(x: NumberArray, y: NumberArray) {
   if (!isAnyArray(x) || !isAnyArray(y)) {
     throw new TypeError('x and y must be arrays');
   }

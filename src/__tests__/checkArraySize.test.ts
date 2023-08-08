@@ -12,12 +12,16 @@ describe('checkArrayLength', () => {
 
   it('throws if not arrays', () => {
     const expected = /x and y must be arrays/;
+    // @ts-expect-error testing invalid input
     expect(() => checkArrayLength(null, [1])).toThrow(expected);
+    // @ts-expect-error testing invalid input
     expect(() => checkArrayLength([], null)).toThrow(expected);
     // @ts-expect-error testing invalid input
     expect(() => checkArrayLength()).toThrow(expected);
+    // @ts-expect-error testing invalid input
     expect(() => checkArrayLength(42, [])).toThrow(expected);
-    expect(() => checkArrayLength([], 'hello')).toThrow(expected);
+    // @ts-expect-error testing invalid input
+    expect(() => checkArrayLength([1, 2, 3, 4, 5], 'hello')).toThrow(expected);
   });
 
   it('correct result', () => {

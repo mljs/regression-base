@@ -47,9 +47,7 @@ export default class BaseRegression {
    * @return {object}
    */
   score(x, y) {
-    if (!isAnyArray(x) || !isAnyArray(y) || x.length !== y.length) {
-      throw new Error('x and y must be arrays of the same length');
-    }
+    checkArrayLength(x, y);
 
     const n = x.length;
     const y2 = new Array(n);
