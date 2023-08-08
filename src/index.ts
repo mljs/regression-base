@@ -42,10 +42,12 @@ export default class BaseRegression {
     // Do nothing for this package
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   toString(precision?: number) {
     return '';
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   toLaTeX(precision?: number) {
     return '';
   }
