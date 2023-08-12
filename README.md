@@ -54,7 +54,7 @@ constructor are effectively arrays with the same length.
 [npm-url]: https://npmjs.org/package/ml-regression-base
 [codecov-image]: https://img.shields.io/codecov/c/github/mljs/regression-base.svg
 [codecov-url]: https://codecov.io/gh/mljs/regression-base
-[ci-image]: https://github.com/mljs/regression-base/workflows/Node.js%20CI/badge.svg
+[ci-image]: https://github.com/mljs/regression-base/workflows/Node.js%20CI/badge.svg?branch=main
 [ci-url]: https://github.com/mljs/regression-base/actions?query=workflow%3A%22Node.js+CI%22
 [download-image]: https://img.shields.io/npm/dm/ml-regression-base.svg
 [download-url]: https://npmjs.org/package/ml-regression-base
