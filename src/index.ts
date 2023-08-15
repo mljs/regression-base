@@ -1,8 +1,16 @@
+import { type NumberArray } from 'cheminfo-types';
 import { isAnyArray } from 'is-any-array';
 
-export { default as maybeToPrecision } from './maybeToPrecision';
-export { default as checkArrayLength } from './checkArrayLength';
+import checkArrayLength from './checkArrayLength';
 
+export { default as maybeToPrecision } from './maybeToPrecision';
+
+export interface RegressionScore {
+  r: number;
+  r2: number;
+  chi2: number;
+  rmsd: number;
+}
 export default class BaseRegression {
   constructor() {
     if (new.target === BaseRegression) {
@@ -10,13 +18,15 @@ export default class BaseRegression {
     }
   }
 
-  predict(x) {
+  predict(x: number): number;
+  predict(x: NumberArray): number[];
+  predict(x: number | NumberArray) {
     if (typeof x === 'number') {
       return this._predict(x);
     } else if (isAnyArray(x)) {
       const y = [];
-      for (let i = 0; i < x.length; i++) {
-        y.push(this._predict(x[i]));
+      for (const xVal of x) {
+        y.push(this._predict(xVal));
       }
       return y;
     } else {
@@ -24,7 +34,8 @@ export default class BaseRegression {
     }
   }
 
-  _predict() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  _predict(x: number): number {
     throw new Error('_predict must be implemented');
   }
 
@@ -32,24 +43,24 @@ export default class BaseRegression {
     // Do nothing for this package
   }
 
-  toString() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  toString(precision?: number) {
     return '';
   }
 
-  toLaTeX() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  toLaTeX(precision?: number) {
     return '';
   }
 
   /**
    * Return the correlation coefficient of determination (r) and chi-square.
-   * @param {Array<number>} x
-   * @param {Array<number>} y
-   * @return {object}
+   * @param x - explanatory variable
+   * @param y - response variable
+   * @return - Object with further statistics.
    */
-  score(x, y) {
-    if (!isAnyArray(x) || !isAnyArray(y) || x.length !== y.length) {
-      throw new Error('x and y must be arrays of the same length');
-    }
+  score(x: NumberArray, y: NumberArray): RegressionScore {
+    checkArrayLength(x, y);
 
     const n = x.length;
     const y2 = new Array(n);
@@ -81,10 +92,12 @@ export default class BaseRegression {
       Math.sqrt((n * xSquared - xSum * xSum) * (n * ySquared - ySum * ySum));
 
     return {
-      r: r,
+      r,
       r2: r * r,
-      chi2: chi2,
+      chi2,
       rmsd: Math.sqrt(rmsd / n),
     };
   }
 }
+
+export { checkArrayLength, type NumberArray };

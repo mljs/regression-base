@@ -1,3 +1,5 @@
+import { expect, it, describe } from 'vitest';
+
 import maybeToPrecision from '../maybeToPrecision';
 
 describe('maybeToPrecision', () => {
