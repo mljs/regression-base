@@ -1,5 +1,16 @@
 # Changelog
 
+## [3.0.0](https://github.com/mljs/regression-base/compare/v2.1.6...v3.0.0) (2023-08-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* migrate to typescript ([#15](https://github.com/mljs/regression-base/issues/15))
+
+### Code Refactoring
+
+* migrate to typescript ([#15](https://github.com/mljs/regression-base/issues/15)) ([6629cee](https://github.com/mljs/regression-base/commit/6629ceeb5b8754acd3202501638a15c0a65bef95))
+
 ### [2.1.6](https://www.github.com/mljs/regression-base/compare/v2.1.5...v2.1.6) (2022-01-21)
 
 
