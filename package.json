@@ -1,6 +1,6 @@
 {
   "name": "ml-regression-base",
-  "version": "2.1.6",
+  "version": "3.0.0",
   "description": "Base class for regression modules",
   "main": "./lib/index.js",
   "module": "./lib-esm/index.js",
