@@ -1,6 +1,6 @@
 import { expect, it, describe } from 'vitest';
 
-import maybeToPrecision from '../maybeToPrecision';
+import { maybeToPrecision } from '..';
 
 describe('maybeToPrecision', () => {
   it('positive number - no digit', () => {

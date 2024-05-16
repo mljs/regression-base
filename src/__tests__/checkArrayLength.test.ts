@@ -1,6 +1,6 @@
 import { expect, it, describe } from 'vitest';
 
-import checkArrayLength from '../checkArrayLength';
+import { checkArrayLength } from '..';
 
 describe('checkArrayLength', () => {
   it('throws on different Length', () => {

@@ -6,7 +6,7 @@ import { isAnyArray } from 'is-any-array';
  * @param y - second array
  * @throws if x or y are not the same length, or if they are not arrays
  */
-export default function checkArrayLength(x: NumberArray, y: NumberArray) {
+export function checkArrayLength(x: NumberArray, y: NumberArray) {
   if (!isAnyArray(x) || !isAnyArray(y)) {
     throw new TypeError('x and y must be arrays');
   }

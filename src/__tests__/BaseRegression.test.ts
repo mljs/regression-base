@@ -1,6 +1,6 @@
 import { expect, it, describe } from 'vitest';
 
-import BaseRegression from '..';
+import { BaseRegression } from '..';
 
 class NoPredict extends BaseRegression {}
 class Basic extends BaseRegression {
@@ -17,6 +17,7 @@ class Basic extends BaseRegression {
 describe('base regression', () => {
   it('should not be directly constructable', () => {
     expect(() => {
+      // eslint-disable-next-line no-new
       new BaseRegression();
     }).toThrow(/BaseRegression must be subclassed/);
   });

@@ -4,7 +4,7 @@
  * @param figures
  * @returns - A string representation of `number`.
  */
-export default function maybeToPrecision(number: number, figures?: number) {
+export function maybeToPrecision(number: number, figures?: number) {
   if (number < 0) {
     number = 0 - number;
     if (typeof figures === 'number') {
