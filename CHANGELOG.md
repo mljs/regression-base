@@ -1,5 +1,16 @@
 # Changelog
 
+## [4.0.0](https://github.com/mljs/regression-base/compare/v3.0.0...v4.0.0) (2024-05-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove default export and update dependencies
+
+### Miscellaneous Chores
+
+* remove default export and update dependencies ([83ee60f](https://github.com/mljs/regression-base/commit/83ee60fb2b6dd7e542d9c4e754ebf7cbcc73d799))
+
 ## [3.0.0](https://github.com/mljs/regression-base/compare/v2.1.6...v3.0.0) (2023-08-15)
 
 
