@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.0.1](https://github.com/mljs/regression-base/compare/v4.0.0...v4.0.1) (2026-04-16)
+
+
+### Bug Fixes
+
+* update is-any-array ([ddd6ffc](https://github.com/mljs/regression-base/commit/ddd6ffc8346472ff0201feb15c4daaea70b93849))
+
 ## [4.0.0](https://github.com/mljs/regression-base/compare/v3.0.0...v4.0.0) (2024-05-16)
 
 
