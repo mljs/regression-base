@@ -2,28 +2,27 @@
   "name": "ml-regression-base",
   "version": "4.0.1",
   "description": "Base class for regression modules",
-  "main": "./lib/index.js",
-  "module": "./lib-esm/index.js",
-  "types": "./lib/index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": "./lib/index.js"
+  },
   "sideEffects": false,
   "files": [
-    "src",
     "lib",
-    "lib-esm"
+    "src"
   ],
   "scripts": {
     "check-types": "tsc --noEmit",
-    "clean": "rimraf lib lib-esm",
+    "clean": "rimraf lib",
     "eslint": "eslint src",
     "eslint-fix": "npm run eslint -- --fix",
     "prepack": "npm run tsc",
     "prettier": "prettier --check src",
     "prettier-write": "prettier --write src",
-    "test": "npm run test-only && npm run eslint && npm run prettier && npm run check-types",
+    "test": "npm run test-only && npm run check-types && npm run eslint && npm run prettier",
     "test-only": "vitest run --coverage",
-    "tsc": "npm run clean && npm run tsc-cjs && npm run tsc-esm",
-    "tsc-cjs": "tsc --project tsconfig.cjs.json",
-    "tsc-esm": "tsc --project tsconfig.esm.json"
+    "tsc": "npm run clean && npm run tsc-build",
+    "tsc-build": "tsc --project tsconfig.build.json"
   },
   "repository": {
     "type": "git",
@@ -42,11 +41,12 @@
   },
   "devDependencies": {
     "@vitest/coverage-v8": "^4.1.4",
+    "@zakodium/tsconfig": "^1.0.5",
     "eslint": "^9.39.4",
     "eslint-config-cheminfo-typescript": "^22.0.0",
     "prettier": "^3.8.3",
     "rimraf": "^6.1.3",
-    "typescript": "^6.0.2",
+    "typescript": "^5.9.3",
     "vitest": "^4.1.4"
   }
 }

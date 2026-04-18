@@ -1,6 +1,6 @@
 import { expect, test } from 'vitest';
 
-import { maybeToPrecision } from '..';
+import { maybeToPrecision } from '../index.ts';
 
 test('positive number - no digit', () => {
   expect(maybeToPrecision(0)).toBe('0');

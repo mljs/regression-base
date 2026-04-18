@@ -1,6 +1,6 @@
 import { expect, test } from 'vitest';
 
-import { BaseRegression } from '..';
+import { BaseRegression } from '../index.ts';
 
 class NoPredict extends BaseRegression {}
 class Basic extends BaseRegression {
@@ -9,7 +9,7 @@ class Basic extends BaseRegression {
     super();
     this.factor = factor;
   }
-  _predict(x: number) {
+  override _predict(x: number) {
     return x * this.factor;
   }
 }

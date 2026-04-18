@@ -1,6 +1,6 @@
 import { expect, test } from 'vitest';
 
-import { checkArrayLength } from '..';
+import { checkArrayLength } from '../index.ts';
 
 test('throws on different Length', () => {
   const expected = /x and y arrays must have the same length/;
