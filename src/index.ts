@@ -1,3 +1,3 @@
-export * from './BaseRegression';
-export * from './checkArrayLength';
-export * from './maybeToPrecision';
+export * from './BaseRegression.ts';
+export * from './checkArrayLength.ts';
+export * from './maybeToPrecision.ts';

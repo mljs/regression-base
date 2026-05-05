@@ -1,7 +1,7 @@
 import type { NumberArray } from 'cheminfo-types';
 import { isAnyArray } from 'is-any-array';
 
-import { checkArrayLength } from './checkArrayLength';
+import { checkArrayLength } from './checkArrayLength.ts';
 
 export interface RegressionScore {
   r: number;
@@ -9,6 +9,7 @@ export interface RegressionScore {
   chi2: number;
   rmsd: number;
 }
+
 export class BaseRegression {
   constructor() {
     if (new.target === BaseRegression) {
@@ -55,7 +56,7 @@ export class BaseRegression {
    * Return the correlation coefficient of determination (r) and chi-square.
    * @param x - explanatory variable
    * @param y - response variable
-   * @return - Object with further statistics.
+   * @returns Object with further statistics.
    */
   score(x: NumberArray, y: NumberArray): RegressionScore {
     checkArrayLength(x, y);
@@ -63,7 +64,7 @@ export class BaseRegression {
     const n = x.length;
     const y2: number[] = new Array(n);
     for (let i = 0; i < n; i++) {
-      y2[i] = this._predict(x[i]);
+      y2[i] = this._predict(x[i] as number);
     }
 
     let xSum = 0;
@@ -74,15 +75,17 @@ export class BaseRegression {
     let ySquared = 0;
     let xY = 0;
     for (let i = 0; i < n; i++) {
-      xSum += y2[i];
-      ySum += y[i];
-      xSquared += y2[i] * y2[i];
-      ySquared += y[i] * y[i];
-      xY += y2[i] * y[i];
-      if (y[i] !== 0) {
-        chi2 += ((y[i] - y2[i]) * (y[i] - y2[i])) / y[i];
+      const yi = y[i] as number;
+      const y2i = y2[i] as number;
+      xSum += y2i;
+      ySum += yi;
+      xSquared += y2i * y2i;
+      ySquared += yi * yi;
+      xY += y2i * yi;
+      if (yi !== 0) {
+        chi2 += ((yi - y2i) * (yi - y2i)) / yi;
       }
-      rmsd += (y[i] - y2[i]) * (y[i] - y2[i]);
+      rmsd += (yi - y2i) * (yi - y2i);
     }
 
     const r =

@@ -1,8 +1,8 @@
 /**
  * Cast `number` to string. Optionally `digits` specifies significant figures.
- * @param number
- * @param figures
- * @returns - A string representation of `number`.
+ * @param number - The number to convert.
+ * @param figures - Number of significant figures.
+ * @returns A string representation of `number`.
  */
 export function maybeToPrecision(number: number, figures?: number) {
   if (number < 0) {
