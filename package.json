@@ -40,6 +40,7 @@
     "is-any-array": "^3.0.0"
   },
   "devDependencies": {
+    "@types/node": "^25.6.0",
     "@vitest/coverage-v8": "^4.1.4",
     "@zakodium/tsconfig": "^1.0.5",
     "eslint": "^9.39.4",
